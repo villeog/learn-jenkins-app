@@ -2,15 +2,13 @@ pipeline {
     agent any
 
     stages {
-
-        stage('w/o docker') 
+        stage('w/o docker') {
             steps {
                 sh '''
                 echo "without docker"
                 '''
             }
-        
-        
+        }
 
         stage('Build') {
             agent {
@@ -33,4 +31,3 @@ pipeline {
         }
     }
 }
-
