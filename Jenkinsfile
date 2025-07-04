@@ -2,17 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Without Docker') {
-            steps {
-                sh '''
-                echo "w/o docker"
-                touch wodo2
-                ls -la
-                '''
-            }
-        }
+        
 
-        stage('With Docker') {
+        stage('Build') {
             agent {
                 docker {
                     image 'node:18-alpine'
@@ -21,10 +13,12 @@ pipeline {
                 }
             }
             steps {
-                sh 'echo "with docker"'
                 sh '''
+                ls -la
                 npm --version
-                touch withd2
+                node --version                
+                npm ci
+                npm run build
                 ls -la
                 '''
             }
