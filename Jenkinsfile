@@ -9,7 +9,7 @@ pipeline {
                 echo "without docker"
                 '''
             }
-        }
+        
         
 
         stage('Build') {
