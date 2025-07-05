@@ -65,6 +65,7 @@ pipeline {
                 npm install netlify-cli
                 node_modules/.bin/netlify --version
                 node_modules/.bin/netlify status
+                node_modules/.bin/netlify deploy --dir=build
                 echo "Deploying to produciton. Site ID: $NETLIFY_SITE_ID"
 
                 '''
