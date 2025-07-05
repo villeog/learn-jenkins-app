@@ -1,8 +1,9 @@
 pipeline {
     agent any
 
-    enviornment {
+    environment {
         NETLIFY_SITE_ID = '8ae2bc7e-4a27-4acf-8530-fc4a0dfb70e1'
+        SH 'echo $NETLIFY_SITE_ID'
     }
 
     stages {
